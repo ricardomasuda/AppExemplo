@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppTurmas.View.Login.LoginPage">
+    <ContentPage.Content>
+        <ScrollView
+            VerticalOptions="Center">
+            <StackLayout
+                Padding="15,0,15,0"
+                VerticalOptions="Center">
+                <Frame
+                    x:Name="frameFacebook"
+                    HasShadow="True"
+                    Padding="10"
+                    Margin="10,0,10,0"
+                    CornerRadius="20"
+                    BackgroundColor="#425bb4">
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal">
+                        <Label                      
+                            Text="USAR O FACEBOOK"
+                            Margin="1"
+                            TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+                <Grid
+                    Margin="0,15,0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout
+                        HeightRequest="1"
+                        VerticalOptions="Center"
+                        BackgroundColor="Gray"/>
+                    <Label
+                        Grid.Column="1"
+                        Text="OU"
+                        TextColor="Black"
+                        Margin="10"/>
+                    <StackLayout
+                        Grid.Column="2"
+                        VerticalOptions="Center"
+                        HeightRequest="1"
+                        BackgroundColor="Gray"/>
+                </Grid>
+                <Frame
+                    Margin="10,0,10,0"
+                    HasShadow="True"
+                    BackgroundColor="White">
+                    <Grid
+                        RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            x:Name="labelWarning"
+                            IsVisible="False"
+                            Text="Insira as informações abaixo"
+                            TextColor="Red"
+                            Grid.ColumnSpan="2"
+                            HorizontalOptions="Center"/>
+                        <Entry                      
+                            Grid.Column="1"                            
+                            Grid.Row="1"
+                            Text="{Binding Email}"
+                            Placeholder="Email"/>
+                        <Entry                     
+                            Grid.Column="1"
+                            Grid.Row="3"
+                            Text="{Binding Senha}"
+                            IsPassword="True"
+                            Placeholder="Senha"/>
+                    </Grid>
+                </Frame>
+                <Button
+                    HorizontalOptions="End"
+                    Margin="0,0,10,10"
+                    Clicked="ResetarSenhaCmd"
+                   
+                    Text="Esqueceu sua senha?"
+                    TextColor="Black"/>
+                <Button                
+                    Margin="10,0,10,0"
+                    Padding="10"
+                    CornerRadius="20"
+                    TextColor="White"
+                    Clicked="LogarCmd"
+                  
+                    BackgroundColor="#34a9d5"
+                    Text="CONECTAR-SE"/>
+                <Button                
+                    Margin="10,0,10,0"
+                    Clicked="CadastrarNovoUsuarioCmd"                   
+                    Padding="10"
+                    CornerRadius="20"
+                    TextColor="White"
+                    BackgroundColor="#34a9d5"
+                    Text="CADASTRAR"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

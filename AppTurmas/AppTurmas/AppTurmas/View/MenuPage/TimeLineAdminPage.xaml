@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppTurmas.View.MenuPage.TimeLineAdminPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame
+                HasShadow="True"
+                BackgroundColor="White"
+                CornerRadius="5">
+                <StackLayout>
+                    <Label
+                        Text="Titulo da Menssagem"
+                        FontAttributes="Bold"                     
+                        HorizontalOptions="Start"
+                        TextColor="Black"/>
+                    <Entry
+                        Text="{Binding Text}"
+                        TextColor="Black"/>
+                </StackLayout>
+            </Frame>
+            <Frame
+                HasShadow="True"
+                BackgroundColor="White"
+                CornerRadius="5">
+                <StackLayout>
+                    <Label
+                        Text="Mensagem"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start"
+                        TextColor="Black"/>
+                    <Entry
+                        Text="{Binding Menssagem}"
+                        TextColor="Black"
+                        HeightRequest="200" />
+                </StackLayout>
+            </Frame>
+            <Button
+                Margin="30,10,30,10"
+                CornerRadius="20" 
+                Text="  ENVIAR  "
+                Command="{Binding EnviarCmd}"
+                HorizontalOptions="CenterAndExpand"
+                >
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

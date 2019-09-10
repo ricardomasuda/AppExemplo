@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:util="clr-namespace:AppTurmas.Util"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Chat B2"
+             x:Class="AppTurmas.View.MenuPage.ChatPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="minhasMenssagensTamplate">
+                <ViewCell>
+                    <StackLayout
+                    HorizontalOptions="FillAndExpand">
+                        <Frame
+                            Margin="5,5,35,5"
+                            Padding="3"
+                            CornerRadius="10"                          
+                            HorizontalOptions="End"
+                            BackgroundColor="White">
+                            <StackLayout>
+                                <Label 
+                                    Text="{Binding User.Nome}"
+                                    FontAttributes="Bold"
+                                    FontSize="Small"
+                                />
+                                <StackLayout
+                                    Orientation="Horizontal">
+                                    <Label 
+                                        Text="{Binding Texto_menssagem}"
+                                        VerticalOptions="Center"
+                                        FontSize="Small"/>
+                                    <Label 
+                                        HorizontalOptions="End"
+                                        VerticalOptions="End"
+                                        Text="{Binding Data}"
+                                        FontSize="10"
+                                        />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="menssagensOutrasPessoasTemplate">
+                <ViewCell>
+                    <StackLayout
+                        HorizontalOptions="FillAndExpand">
+                        <Frame
+                            Margin="5,5,35,5"
+                            Padding="3"
+                            CornerRadius="10"
+                            HorizontalOptions="Start"
+                            BackgroundColor="White">
+                            <StackLayout>
+                                <Label 
+                                    Text="{Binding User.Nome}"
+                                    FontAttributes="Bold"
+                                    FontSize="Small"
+                                    />
+                                <StackLayout
+                                    Orientation="Horizontal">
+                                    <Label 
+                                        Text="{Binding Texto_menssagem}"
+                                        VerticalOptions="Center"
+                                        FontSize="Small"/>
+                                    <Label 
+                                        HorizontalOptions="EndAndExpand"
+                                        MinimumWidthRequest="35"
+                                        VerticalOptions="End"
+                                        Text="{Binding Data}"
+                                        FontSize="10"
+                                        />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <util:MenssagemDataTemplateSelector  
+                x:Key="SelecionadorMenssagem"
+                MenssagensOutrasPessoasTemplate="{StaticResource menssagensOutrasPessoasTemplate}"
+                MinhasMenssagensTamplate="{StaticResource minhasMenssagensTamplate}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                ItemsSource="{Binding ListaMessenger}" 
+                HasUnevenRows="True" 
+                SelectionMode="None"
+                VerticalOptions="FillAndExpand"
+                ItemTemplate="{StaticResource SelecionadorMenssagem}"
+                >
+            </ListView>
+            <StackLayout 
+                Orientation="Horizontal"
+                Margin="5"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="End">
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Enviar menssagem ..."
+                    Text="{Binding MenssagemUp}"
+                    />
+                <Button
+                    CornerRadius="30"
+                    HeightRequest="40"
+                    Command="{Binding EnviarCmd}"
+                    WidthRequest="60"
+                    Text="UP"
+                    />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

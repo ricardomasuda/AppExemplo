@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppTurmas.View.Login.CadastroPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollView
+                Padding="5">
+                <Frame
+                    HasShadow="True"
+                    Padding="5"
+                    Margin="5"
+                    CornerRadius="5"
+                    BackgroundColor="White">
+                    <StackLayout
+                        Padding="15,5,15,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout
+                                HeightRequest="1"
+                                VerticalOptions="Center"
+                                BackgroundColor="Gray"/>
+                            <Label
+                                Grid.Column="1"
+                                Text="DADOS GERAIS"                            
+                                FontSize="Micro"
+                                TextColor="Black"
+                                Margin="10"/>
+                            <StackLayout
+                                Grid.Column="2"
+                                VerticalOptions="Center"
+                                HeightRequest="1"
+                                BackgroundColor="Gray"/>
+                        </Grid>
+
+                        <Label
+                            Text="Nome completo:"
+                            TextColor="Black"                         
+                            FontSize="Small"/>
+                        <Entry
+                            Text="{Binding Nome}"             
+                            Placeholder="Nome"/>
+                        <StackLayout 
+                            Orientation="Vertical">
+                            <Label
+                                Text="Turma:"
+                                TextColor="Black"                         
+                                FontSize="Small"/>
+                            <Entry
+                                Text="{Binding Turma}"                         
+                                Placeholder="Turma"/>
+                        </StackLayout>
+                        <StackLayout 
+                            Orientation="Vertical">
+                            <Label
+                                Text="Email:"
+                                TextColor="Black"                         
+                                FontSize="Small"/>
+                            <Entry
+                                Text="{Binding Email}"                         
+                                Placeholder="Email"/>
+                        </StackLayout>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label
+                                Text="RG:"                          
+                                TextColor="Black"
+                                FontSize="Small"/>
+                            <Entry
+                                Text="{Binding Rg}"
+                                Grid.Row="1"
+                                Keyboard="Numeric"                             
+                                Placeholder="(Opcional)"/>
+                            <Label
+                                Grid.Column="1"                             
+                                Text="CPF:"
+                                TextColor="Black"
+                                FontSize="Small"/>
+                            <Entry
+                                Text="{Binding CPF}"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Keyboard="Numeric"                            
+                                Placeholder="(Opcional)"/>
+                        </Grid>
+                        <Label
+                            Text="Telefone:"
+                            TextColor="Black"
+                            FontSize="Small"/>
+                        <Entry
+                            Text="{Binding Telefone}"
+                            Keyboard="Numeric"                        
+                            Placeholder="(00) 00000-0000"/>
+                        <StackLayout
+                            x:Name="stackSenha">
+                            <Label                            
+                                Text="Senha:"
+                                TextColor="Black"
+                                FontSize="Small"/>
+                            <Entry
+                               Text="{Binding Senha}"
+                                IsPassword="True"                         
+                                Placeholder="*******"/>
+                        </StackLayout>
+                        
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+            <Frame
+                Grid.Row="1"
+                x:Name="frameCadastrar"
+                HasShadow="True"
+                Margin="30,0,30,10"
+                Padding="10"
+                CornerRadius="20"
+                BackgroundColor="#34a9d5">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="CADASTRAR"
+                    Margin="1"                 
+                    TextColor="White"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding CadastrarCmd}"
+                        >
+                    </TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

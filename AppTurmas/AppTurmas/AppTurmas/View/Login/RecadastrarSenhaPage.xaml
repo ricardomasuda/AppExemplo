@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppTurmas.View.Login.RecadastrarSenhaPage">
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            >
+            <StackLayout
+                VerticalOptions="Start">
+                <!--<Image
+                        WidthRequest="90"
+                        Margin="0,65,0,20"
+                        HeightRequest="90">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">
+                            <OnPlatform.iOS>
+                                <FileImageSource File="ESQ_LOGIN"/>
+                            </OnPlatform.iOS>
+                            <OnPlatform.Android>
+                                <FileImageSource File="ESQ_LOGIN.png"/>
+                            </OnPlatform.Android>
+                        </OnPlatform>
+                    </Image.Source>
+                </Image>-->
+                <Grid
+                    Margin="0,15,0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout
+                        HeightRequest="1"
+                        VerticalOptions="Center"
+                        BackgroundColor="Gray"/>
+                    <Label
+                        Grid.Column="1"
+                        Text="Resetar"
+                        TextColor="Black"
+                        Margin="10"/>
+                    <StackLayout
+                        Grid.Column="2"
+                        VerticalOptions="Center"
+                        HeightRequest="1"
+                        BackgroundColor="Gray"/>
+                </Grid>
+                <Frame
+                    Margin="10,0,10,0"
+                    HasShadow="True"
+                    BackgroundColor="White">
+                    <Grid
+                        RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="15"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            x:Name="labelWarning"
+                            IsVisible="False"
+                            Text="Insira as informações abaixo"
+                            TextColor="Red"
+                            Grid.ColumnSpan="2"
+                            HorizontalOptions="Center"/>
+                        <!--<Image
+                                Grid.Row="1"
+                                WidthRequest="16"
+                                HeightRequest="16">
+                            <Image.Source>
+                                <OnPlatform x:TypeArguments="ImageSource">
+                                    <OnPlatform.iOS>
+                                        <FileImageSource File="USER_LOGIN"/>
+                                    </OnPlatform.iOS>
+                                    <OnPlatform.Android>
+                                        <FileImageSource File="USER_LOGIN.png"/>
+                                    </OnPlatform.Android>
+                                </OnPlatform>
+                            </Image.Source>
+                        </Image>-->
+                        <Entry
+                            x:Name="entryNome"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Placeholder="Nome"/>
+                        <Image
+                            Grid.Row="3"
+                            WidthRequest="16"
+                            HeightRequest="16">
+                            <!--<Image.Source>
+                                <OnPlatform x:TypeArguments="ImageSource">
+                                    <OnPlatform.iOS>
+                                        <FileImageSource File="PASS_LOGIN"/>
+                                    </OnPlatform.iOS>
+                                    <OnPlatform.Android>
+                                        <FileImageSource File="PASS_LOGIN.png"/>
+                                    </OnPlatform.Android>
+                                </OnPlatform>
+                            </Image.Source>-->
+                        </Image>
+                        <Entry
+                            x:Name="entryEmail"
+                            Grid.Column="1"
+                            Grid.Row="3"
+                            IsPassword="True"
+                            Placeholder="Email"/>
+                    </Grid>
+                </Frame>
+                <Button
+                    x:Name="frameConectar" 
+                    Margin="40,0,40,10"
+                    CornerRadius="10"                      
+                    BackgroundColor="#34a9d5"                   
+                    HorizontalOptions="Center"
+                    Clicked="ResetarSenha"
+                    Text="Resetar Senha"    
+                    TextColor="White">
+                </Button>
+            </StackLayout>
+            <StackLayout
+               Margin="10">
+                <Label
+                    FontSize="12"
+                    TextColor="Black"
+                    Text="*Usar o mesmo e-mail que usou no cadastro"
+                    />
+                <Label
+                    FontSize="12"
+                    TextColor="Black"
+                    Text="Apos clicar em resetar senha iremso conferir seus dados na nossa base e enviaremos a nova senha 2h"
+                    />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
